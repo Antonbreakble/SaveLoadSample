@@ -11,8 +11,8 @@ This is a demo unreal engine 5.1 project of a load and save mechanism using bina
 - Call SaveGameToSlot and LoadGameToSlot function from DemoGameState
 - Enjoy
 
-## Save and Load in Runtime mode
+## Save and Load in Runtime Mode
 ![](https://github.com/Antonbreakble/SaveLoadSample/blob/main/AdditionalContent/runtime.gif)
 
-## Load from slot ufter restart game
+## Load From Slot After Restart Game
 ![](https://github.com/Antonbreakble/SaveLoadSample/blob/main/AdditionalContent/restart.gif)
