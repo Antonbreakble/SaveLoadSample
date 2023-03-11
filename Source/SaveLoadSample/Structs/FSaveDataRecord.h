@@ -10,16 +10,16 @@ struct FSaveDataRecord
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY()
+	UPROPERTY(SaveGame)
 	UClass* ActorClass;
 
-	UPROPERTY()
+	UPROPERTY(SaveGame)
 	FString ActorName;
 
-	UPROPERTY()
+	UPROPERTY(SaveGame)
 	FTransform ActorTransform;
 
-	UPROPERTY()
+	UPROPERTY(SaveGame)
 	TArray<uint8> BinaryData;
 };
 

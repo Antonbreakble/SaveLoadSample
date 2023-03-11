@@ -2,6 +2,7 @@
 
 #include "SaveLoadSampleGameMode.h"
 #include "SaveLoadSampleCharacter.h"
+#include "GameStates/DemoGameState.h"
 #include "UObject/ConstructorHelpers.h"
 
 ASaveLoadSampleGameMode::ASaveLoadSampleGameMode()
@@ -12,4 +13,5 @@ ASaveLoadSampleGameMode::ASaveLoadSampleGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+	GameStateClass = ADemoGameState::StaticClass();
 }

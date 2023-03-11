@@ -18,10 +18,14 @@ class SAVELOADSAMPLE_API ADemoGameState : public AGameStateBase
 public:
 	ADemoGameState();
 	UFUNCTION(BlueprintCallable, Category=SaveLoad)
-	void SaveGameToSlot();
+	void SaveGameToSlot(FString SlotName);
+
+	UFUNCTION(BlueprintCallable, Category=SaveLoad)
+	void LoadFromSlot(FString SlotName);
 private:
 	UPROPERTY(SaveGame)
 	TArray<FSaveDataRecord> DataRecords;
 private:
 	void SaveActors();
+	void ClearActors() const;
 };
