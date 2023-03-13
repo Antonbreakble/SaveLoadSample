@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\arm\\documents\\github\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\src\\fmt.cpp",
+        "Source": "c:\\users\\armo\\documents\\unreal projects\\plastic_vrtrainer\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\src\\fmt.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\users\\arm\\documents\\github\\saveloadsample\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\unrealeditor\\development\\rd\\definitions.h",
-            "c:\\users\\arm\\documents\\github\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\include\\spdlog\\fmt\\bundled\\format-inl.h",
+            "c:\\users\\armo\\documents\\unreal projects\\plastic_vrtrainer\\saveloadsample\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\unrealeditor\\development\\rd\\definitions.h",
+            "c:\\users\\armo\\documents\\unreal projects\\plastic_vrtrainer\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\include\\spdlog\\fmt\\bundled\\format-inl.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\algorithm",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\vcruntime.h",
@@ -116,8 +116,8 @@
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\xloctime",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\io.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\corecrt_io.h",
-            "c:\\users\\arm\\documents\\github\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\include\\spdlog\\fmt\\bundled\\format.h",
-            "c:\\users\\arm\\documents\\github\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\include\\spdlog\\fmt\\bundled\\core.h",
+            "c:\\users\\armo\\documents\\unreal projects\\plastic_vrtrainer\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\include\\spdlog\\fmt\\bundled\\format.h",
+            "c:\\users\\armo\\documents\\unreal projects\\plastic_vrtrainer\\saveloadsample\\plugins\\developer\\riderlink\\source\\rd\\thirdparty\\spdlog\\include\\spdlog\\fmt\\bundled\\core.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\string",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\string_view",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\intrin.h",

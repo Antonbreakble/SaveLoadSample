@@ -1,4 +1,4 @@
-C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Source\RiderShaderInfo\RiderShaderInfo.cpp
+"C:\Users\ARMO\Documents\Unreal Projects\Plastic_VRTrainer\SaveLoadSample\Plugins\Developer\RiderLink\Source\RiderShaderInfo\RiderShaderInfo.cpp"
 /I .
 /I Runtime
 /I Runtime\TraceLog\Public
@@ -7,7 +7,7 @@ C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Source\
 /I Runtime\Json\Public
 /I Runtime\RenderCore\Public
 /I Runtime\RHI\Public
-/I C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Source
+/I "C:\Users\ARMO\Documents\Unreal Projects\Plastic_VRTrainer\SaveLoadSample\Plugins\Developer\RiderLink\Source"
 /external:W0
 /external:I ThirdParty\mimalloc\include
 /external:I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\INCLUDE"
@@ -15,9 +15,9 @@ C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Source\
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UnrealEditor\Development\RiderShaderInfo\Definitions.h"
-/Fo"C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.obj"
-/sourceDependencies C:\Users\ARM\Documents\GitHub\SaveLoadSample\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.dep.json
+/FI"C:\Users\ARMO\Documents\Unreal Projects\Plastic_VRTrainer\SaveLoadSample\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UnrealEditor\Development\RiderShaderInfo\Definitions.h"
+/Fo"C:\Users\ARMO\Documents\Unreal Projects\Plastic_VRTrainer\SaveLoadSample\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.obj"
+/sourceDependencies "C:\Users\ARMO\Documents\Unreal Projects\Plastic_VRTrainer\SaveLoadSample\Plugins\Developer\RiderLink\Intermediate\Build\Win64\UnrealEditor\Development\RiderShaderInfo\RiderShaderInfo.cpp.dep.json"
 /Zc:inline
 /nologo
 /Oi
