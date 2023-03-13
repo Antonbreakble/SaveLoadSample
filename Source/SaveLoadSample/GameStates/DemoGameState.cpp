@@ -7,6 +7,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "SaveLoadSample/DemoSaveGame/DemoSaveGame.h"
 #include "SaveLoadSample/Interfaces/ISavableObject.h"
+#include "SaveLoadSample/Structs/FActorDataRecord.h"
 #include "Serialization/ObjectAndNameAsStringProxyArchive.h"
 
 ADemoGameState::ADemoGameState()
@@ -49,12 +50,17 @@ void ADemoGameState::LoadFromSlot(FString SlotName)
 	auto World = GetWorld();
 	for (auto i = 0; i < DataRecords.Num(); ++i)
 	{
-		auto RestoredActor = World->SpawnActor<AActor>(DataRecords[i].ActorClass,
-			DataRecords[i].ActorTransform.GetLocation(),
-			DataRecords[i].ActorTransform.GetRotation().Rotator());
-		RestoredActor->SetActorLabel(DataRecords[i].ActorName);
+		auto RestoredActor = World->SpawnActor<AActor>(DataRecords[i].ActorData.ActorClass,
+			DataRecords[i].ActorData.ActorTransform.GetLocation(),
+			DataRecords[i].ActorData.ActorTransform.GetRotation().Rotator());
+		
+		RestoredActor->SetActorLabel(DataRecords[i].ActorData.ActorName);
+		
 		if(UKismetSystemLibrary::DoesImplementInterface(RestoredActor, USavableObject::StaticClass()))
-			ISavableObject::Execute_LoadFromFSaveDataRecord(RestoredActor, DataRecords[i]);
+		{
+			LoadComponentToActor(RestoredActor, DataRecords[i].ComponentData);
+			ISavableObject::Execute_LoadFromFSaveDataRecord(RestoredActor, DataRecords[i].ActorData);
+		}
 		
 	}
 	
@@ -67,7 +73,42 @@ void ADemoGameState::SaveActors()
 	UGameplayStatics::GetAllActorsWithInterface(GetWorld(), USavableObject::StaticClass(), FindActors);
 	for(const auto Actor : FindActors)
 	{
-		DataRecords.Add(ISavableObject::Execute_GetFSaveDataRecord(Actor));
+		FActorDataRecord ActorDataRecord = FActorDataRecord();
+		ActorDataRecord.ActorData = ISavableObject::Execute_GetFSaveDataRecord(Actor);
+		SaveComponentFromActors(Actor, ActorDataRecord);
+		DataRecords.Add(ActorDataRecord);
+	}
+}
+
+void ADemoGameState::SaveComponentFromActors(const AActor* Actor, FActorDataRecord& ActorDataRecord)
+{
+	auto SavableComponents = Actor->GetComponentsByInterface(USavableObject::StaticClass());
+	for(UActorComponent* SavableComponent : SavableComponents)
+	{
+		ActorDataRecord.ComponentData.Add(ISavableObject::Execute_GetFSaveDataRecord(SavableComponent));
+	}
+}
+
+void ADemoGameState::LoadComponentToActor(const AActor* Actor, TArray<FSaveDataRecord> ComponentData)
+{
+	auto SavableComponent = Actor->GetComponentsByInterface(USavableObject::StaticClass());
+	for(auto i = 0; i < ComponentData.Num(); i++)
+	{
+		auto ComponentName = ComponentData[i].ActorName;
+
+		auto AvailableComponent = SavableComponent.FindByPredicate([ComponentName](const UActorComponent* Component)
+		{
+			return ComponentName == Component->GetName();
+		});
+		
+		if(!AvailableComponent)
+			continue;
+		
+		FMemoryReader Reader = FMemoryReader(ComponentData[i].BinaryData);
+		FObjectAndNameAsStringProxyArchive Ar(Reader, false);
+		Ar.ArIsSaveGame = true;
+		
+		(*AvailableComponent)->Serialize(Ar);
 	}
 }
 
