@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
+#include "SaveLoadSample/Structs/FActorDataRecord.h"
 #include "SaveLoadSample/Structs/FSaveDataRecord.h"
 #include "UObject/Object.h"
 #include "DemoGameState.generated.h"
@@ -24,8 +25,10 @@ public:
 	void LoadFromSlot(FString SlotName);
 private:
 	UPROPERTY(SaveGame)
-	TArray<FSaveDataRecord> DataRecords;
+	TArray<FActorDataRecord> DataRecords;
 private:
 	void SaveActors();
+	static void SaveComponentFromActors(const AActor* Actor, FActorDataRecord& ActorDataRecord);
+	static void LoadComponentToActor(const AActor* Actor, TArray<FSaveDataRecord> ComponentData);
 	void ClearActors() const;
 };

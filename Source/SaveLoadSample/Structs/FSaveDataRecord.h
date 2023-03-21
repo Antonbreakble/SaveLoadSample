@@ -21,5 +21,6 @@ public:
 
 	UPROPERTY(SaveGame)
 	TArray<uint8> BinaryData;
+	
 };
 
