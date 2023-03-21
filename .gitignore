@@ -2,6 +2,10 @@
 .vs/
 .idea/
 
+#User Compiled Files
+.Plugins/
+.Platforms/
+
 # Compiled Object files
 *.slo
 *.lo
